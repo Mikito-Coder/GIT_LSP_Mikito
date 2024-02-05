@@ -1,3 +1,6 @@
+/*
+ * Name:Ifeoluwakiitan Ayandosu
+ */
 package org.howard.edu.lsp.hw2;
 
 import java.io.BufferedReader;
