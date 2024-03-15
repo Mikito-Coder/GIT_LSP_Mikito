@@ -1,4 +1,4 @@
-package org.howard.edu.lsp.midterm.question2;
+ package org.howard.edu.lsp.midterm.question2;
 
 /**
  * This class is used to test the IntegerRange class.
