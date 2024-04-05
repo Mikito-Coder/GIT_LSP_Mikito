@@ -129,8 +129,35 @@ public class IntegerSetTest {
     @Test
     @DisplayName("Test case for complement")
     public void testComplement() {
-        // Example test case for complement
-        // Implementation will depend on the interpretation of the method requirements
+    	IntegerSet set2 = new IntegerSet();
+        set.add(1);
+        //set.add(2);
+        set2.add(2);
+        set.complement(set2);
+
+        // Check that the complement operation correctly removes the common element (1) from set
+        // and only retains elements that are unique to set, which should be (2)
+        assertTrue(!set.contains(1) && set.contains(2), "Set should not contain 1 and contain 2 after complement operation.");
+
+        setUp(); // Re-initialize the sets for the next test
+        set.add(1);
+        set.add(2);
+        set2.clear(); // Clear set2 making it an empty set
+        set2.add(2);
+        set.complement(set2);
+
+        // Check that the complement operation results in an empty set when all elements of set
+        // are also contained in set2
+        assertTrue(set.isEmpty(), "Set should be empty after removing elements that also exist in set2.");
+
+        setUp(); // Re-initialize the sets for the next test
+        set.add(1);
+        set.add(2);
+        set2.clear(); // Clear set2 making it an empty set
+        set.complement(set2);
+
+        // Check that the complement operation does not change set if set2 is empty
+        assertTrue(set.isEmpty());
     }
 
     @Test

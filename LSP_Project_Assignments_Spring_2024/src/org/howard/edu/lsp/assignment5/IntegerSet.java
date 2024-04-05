@@ -133,14 +133,20 @@ public void diff(IntegerSet intSetb) {
 
 
 /**
- *  Set Complement
- * @param setb An IntegerSet Type
+ * Updates the current set to be the set complement of itself with respect to another set.
+ * The complement of set A with respect to set B is the set of elements that are in B but not in A.
+ * This method modifies the current set to contain only those elements that are in the provided set (intSetb)
+ * but not in the current set (this).
+ * 
+ * @param intSetb An IntegerSet object whose elements are used to perform the complement operation. 
+ *                The current set will be modified to contain only those elements that are in intSetb but not in the current set.
  */
 public void complement(IntegerSet intSetb) {
-	ArrayList<Integer> complementSet = new ArrayList<>(this.set);
-    complementSet.removeAll(intSetb.set);
-    this.set = complementSet;
+    ArrayList<Integer> complementSet = new ArrayList<>(intSetb.set); // Create a new list containing all elements of intSetb
+    complementSet.removeAll(this.set); // Remove all elements of the current set from the new list
+    this.set = complementSet; // Update the current set to be the complement set
 }
+
 
 /**
  * Returns true if the set is empty, false otherwise
