@@ -4,7 +4,14 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.BeforeEach;
+
 public class IntegerSetTest {
+	private IntegerSet set;
+	 @BeforeEach
+	    public void setUp() {
+	        set = new IntegerSet(); // Before each unit test, it initializes an empty set
+	    }
 
     @Test
     @DisplayName("Test case for clear")
@@ -51,9 +58,9 @@ public class IntegerSetTest {
         set.add(2);
         assertEquals(2, set.largest());
         setUp();
-        Throwable exception = assertThrows(IntegerSetException.class,() → new IntegerSet. largest());
+        Throwable exception = assertThrows(IntegerSetException.class, () -> new IntegerSet().largest());
         // Checks if exception is correctly thrown for when set is empty
-        assertEquals("Set is empty, so largest cannot be determined", exception.getMessage());
+        assertEquals("Set is empty, so largest cannot be determined",exception.getMessage());
     }
 
     @Test
@@ -65,6 +72,7 @@ public class IntegerSetTest {
         set.add(1);
         set.add(2);
         assertEquals(1, set.smallest());
+        
     }
 
     
