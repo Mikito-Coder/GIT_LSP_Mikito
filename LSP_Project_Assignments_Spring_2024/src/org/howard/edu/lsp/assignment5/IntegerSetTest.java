@@ -50,6 +50,10 @@ public class IntegerSetTest {
         set.add(1);
         set.add(2);
         assertEquals(2, set.largest());
+        setUp();
+        Throwable exception = assertThrows(IntegerSetException.class,() → new IntegerSet. largest());
+        // Checks if exception is correctly thrown for when set is empty
+        assertEquals("Set is empty, so largest cannot be determined", exception.getMessage());
     }
 
     @Test
@@ -63,6 +67,8 @@ public class IntegerSetTest {
         assertEquals(1, set.smallest());
     }
 
+    
+    
     @Test
     @DisplayName("Test case for add")
     public void testAdd() {
